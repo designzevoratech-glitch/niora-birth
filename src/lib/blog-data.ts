@@ -31,7 +31,7 @@ export const articles: Article[] = [
     image: "/service-ivf.png",
     date: "July 2026",
     author: "Dr. Fertility Care Team",
-    authorRole: "Senior Clinical Specialists, Niora Birth Clinic",
+    authorRole: "Senior Clinical Specialists, Niora Birth",
     content: {
       intro:
         "Navigating fertility treatments often brings financial questions alongside emotional hope. In Kerala, IVF costs are significantly more affordable than in major western countries or metro cities, without compromising on ISO cleanroom standards, laboratory precision, or medical expertise. This guide breaks down every component transparently so you can plan with zero surprises.",
@@ -55,7 +55,7 @@ export const articles: Article[] = [
             "Advanced Lab Techniques: ICSI (single-sperm injection) or PGT (genetic screening) if male factor or recurrent loss is present.",
             "Frozen Embryo Transfer (FET): Storing surplus viable embryos for future siblings or secondary cycles.",
           ],
-          callout: "At Niora Birth Clinic, we provide an all-inclusive cost estimate upfront during your first consultation with zero hidden clinic markups.",
+          callout: "At Niora Birth, we provide an all-inclusive cost estimate upfront during your first consultation with zero hidden clinic markups.",
         },
         {
           heading: "3. How Out-of-Station & Overseas Patients Can Save Costs",

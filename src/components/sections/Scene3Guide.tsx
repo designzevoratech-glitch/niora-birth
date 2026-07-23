@@ -32,7 +32,7 @@ export default function Scene3Guide() {
       >
         <Image
           src="/scene3-bg.png"
-          alt="Caring consultation environment at Niora Birth Clinic"
+          alt="Caring consultation environment at Niora Birth"
           fill
           className="object-cover object-right lg:object-[78%_center]"
           quality={95}

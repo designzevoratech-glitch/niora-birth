@@ -43,7 +43,7 @@ const faqs = [
   {
     question: "Is using a donor program legally and ethically protected in India?",
     answer:
-      "Yes. Niora Birth Clinic operates in 100% strict compliance with national ART guidelines. All donor protocols follow legally mandated consent structures and donor anonymity standards.",
+      "Yes. Niora Birth operates in 100% strict compliance with national ART guidelines. All donor protocols follow legally mandated consent structures and donor anonymity standards.",
   },
   {
     question: "When is a donor egg or donor sperm program advised?",
@@ -136,7 +136,7 @@ export default function DonorProgramsPage() {
                 className="flex flex-wrap gap-4"
               >
                 <Link
-                  href="https://wa.me/917994892509?text=Hi%20Niora%20Clinic,%20I'd%20like%20to%20confidentially%20inquire%20about%20donor%20programs."
+                  href="https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'd%20like%20to%20confidentially%20inquire%20about%20donor%20programs."
                   target="_blank"
                   className="px-8 py-4 rounded-full bg-gradient-to-r from-mauve-rose to-plum-deep text-white font-semibold text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-3"
                 >

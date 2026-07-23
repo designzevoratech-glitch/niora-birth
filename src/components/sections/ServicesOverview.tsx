@@ -50,7 +50,7 @@ const services = [
     icon: Stethoscope,
     href: "/services/consultations",
     image: "/service-consultation.png",
-    tag: "Start Here — Free Call",
+    tag: "Start Here",
   },
 ];
 

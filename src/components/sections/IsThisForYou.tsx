@@ -155,9 +155,9 @@ export default function IsThisForYou() {
             </p>
           </div>
           <div className="flex-shrink-0 w-full sm:w-auto">
-            <Link href="https://wa.me/917994892509?text=Hi%20Niora%20Birth%20Clinic,%20I'd%20like%20to%20talk%20to%20a%20specialist%20about%20my%20fertility%20situation." target="_blank">
+            <Link href="https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'd%20like%20to%20discuss%20my%20fertility%20concerns." target="_blank">
               <button className="group h-[52px] w-full sm:w-auto px-8 rounded-full bg-gradient-to-r from-mauve-rose to-blush-pink text-plum-deep font-bold text-[15px] hover:shadow-[0_6px_28px_rgba(232,180,192,0.45)] hover:-translate-y-[2px] transition-all duration-300 flex items-center justify-center gap-2.5 whitespace-nowrap">
-                Talk to Us — Free WhatsApp Consultation
+                Talk to Us — WhatsApp Consultation
                 <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </Link>

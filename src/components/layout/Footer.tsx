@@ -120,7 +120,7 @@ export default function Footer() {
             <div className="flex gap-3 items-start">
               <MapPin className="w-4 h-4 text-mauve-rose flex-shrink-0 mt-0.5" />
               <div className="text-[13.5px] text-white/55 leading-relaxed">
-                <span className="font-semibold text-white/75 block mb-1">Niora Birth Clinic</span>
+                <span className="font-semibold text-white/75 block mb-1">Niora Birth</span>
                 MC Road, 379 Building, 2nd Floor,<br />
                 Near Vishal Mart, Pezhakkappilly,<br />
                 Muvattupuzha, Kerala 686673
@@ -168,8 +168,8 @@ export default function Footer() {
         <div className="border-t border-white/8 py-7 flex flex-col md:flex-row justify-between items-center gap-4 text-[12.5px] text-white/35">
           <p>&copy; {new Date().getFullYear()} Niora Birth. Fertility Consultation & Care Coordination Platform. Medical diagnoses and procedures are performed exclusively by qualified fertility specialists at accredited partner hospitals.</p>
           <div className="flex gap-6">
-            <Link href="#" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
-            <Link href="#" className="hover:text-white/60 transition-colors">Terms of Service</Link>
+            <Link href="/privacy-policy" className="hover:text-white/60 transition-colors">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-white/60 transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

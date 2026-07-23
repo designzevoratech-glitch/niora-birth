@@ -151,11 +151,11 @@ export default function EggFreezingPage() {
                 className="flex flex-wrap gap-4"
               >
                 <Link
-                  href="https://wa.me/917994892509?text=Hi%20Niora%20Clinic,%20I'd%20like%20to%20know%20more%20about%20egg%20freezing%20and%20costs."
+                  href="https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'd%20like%20to%20know%20more%20about%20egg%20freezing%20and%20costs."
                   target="_blank"
                   className="px-8 py-4 rounded-full bg-gradient-to-r from-mauve-rose to-plum-deep text-white font-semibold text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-3"
                 >
-                  <span>Book Free Preservation Call</span>
+                  <span>Book Preservation Call</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </motion.div>

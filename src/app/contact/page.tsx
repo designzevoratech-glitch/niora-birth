@@ -157,7 +157,7 @@ export default function ContactPage() {
 
             <div className="mt-8 pt-8 border-t border-cream-bg text-center">
               <p className="text-xs font-semibold uppercase tracking-wider text-charcoal-text/70 mb-4">Need Immediate Clinical Assistance?</p>
-              <Link href="https://wa.me/917994892509?text=Hi%20Niora%20Clinic,%20I'd%20like%20to%20chat%20directly%20with%20a%20fertility%20specialist." target="_blank">
+              <Link href="https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'd%20like%20to%20speak%20with%20a%20patient%20care%20coordinator." target="_blank">
                 <div className="w-full py-3.5 rounded-2xl bg-[#25D366] text-white font-bold text-sm shadow-md hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
                   <MessageSquare className="w-4 h-4" />
                   Chat Directly on WhatsApp (+91 79948 92509)
@@ -176,7 +176,7 @@ export default function ContactPage() {
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-plum-deep mb-1 text-base">Niora Birth Clinic & ART Bank</h4>
+                  <h4 className="font-semibold text-plum-deep mb-1 text-base">Niora Birth</h4>
                   <p className="text-charcoal-text/75 leading-relaxed text-sm">
                     MC Road, 379 Building Number,<br />
                     Second Floor, 4 Shop, Near Vishal Mart,<br />

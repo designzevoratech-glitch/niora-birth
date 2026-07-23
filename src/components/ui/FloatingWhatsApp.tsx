@@ -36,7 +36,7 @@ export default function FloatingWhatsApp() {
               </span>
             </div>
             <p className="text-[12.5px] text-charcoal-text/80 leading-snug font-medium">
-              Have questions? Chat directly with our fertility specialists on WhatsApp.
+              Have questions? Chat directly with our patient care team on WhatsApp.
             </p>
           </motion.div>
         )}
@@ -44,7 +44,7 @@ export default function FloatingWhatsApp() {
 
       {/* Main WhatsApp Pulsing Button */}
       <Link
-        href="https://wa.me/917994892509?text=Hi%20Niora%20Birth%20Clinic,%20I'd%20like%20to%20know%20more%20about%20fertility%20consultation%20options."
+        href="https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'd%20like%20to%20know%20more%20about%20fertility%20consultation%20options."
         target="_blank"
         aria-label="Chat with Niora Birth Clinic on WhatsApp"
       >

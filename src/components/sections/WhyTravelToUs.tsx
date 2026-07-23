@@ -49,7 +49,7 @@ export default function WhyTravelToUs() {
               <div className="absolute inset-0 flex items-center justify-center">
                  <div className="glass rounded-2xl p-6 text-center shadow-xl">
                    <MapPin className="w-8 h-8 text-mauve-rose mx-auto mb-2" />
-                   <h4 className="font-serif text-xl text-plum-deep">Niora Birth Clinic</h4>
+                   <h4 className="font-serif text-xl text-plum-deep">Niora Birth</h4>
                    <p className="text-sm text-charcoal-text/70">Kerala, India</p>
                  </div>
               </div>

@@ -5,18 +5,47 @@ import { getArticleBySlug, articles } from "@/lib/blog-data";
 import { ArrowLeft, Clock, Calendar, User, ArrowRight, CheckCircle2, Sparkles, MessageSquare } from "lucide-react";
 import TrustStrip from "@/components/sections/TrustStrip";
 import CtaBanner from "@/components/sections/CtaBanner";
+import JsonLd from "@/components/seo/JsonLd";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://niorabirth.com";
+
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const article = getArticleBySlug(slug);
-  if (!article) return { title: "Article Not Found | Niora Birth Clinic" };
+  if (!article) return { title: "Article Not Found | Niora Birth" };
+
+  const canonicalUrl = `${siteUrl}/blog/${slug}`;
+
   return {
-    title: `${article.title} | Niora Birth Clinic Blog`,
+    title: `${article.title} | Niora Birth Fertility Blog`,
     description: article.excerpt,
+    alternates: {
+      canonical: canonicalUrl,
+    },
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      url: canonicalUrl,
+      type: "article",
+      publishedTime: article.date,
+      authors: [article.author],
+      images: [
+        {
+          url: article.image.startsWith("http") ? article.image : `${siteUrl}${article.image}`,
+          alt: article.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+      images: [article.image.startsWith("http") ? article.image : `${siteUrl}${article.image}`],
+    },
   };
 }
 
@@ -34,8 +63,57 @@ export default async function ArticleDetailPage({ params }: PageProps) {
 
   const relatedArticles = articles.filter((a) => a.slug !== article.slug).slice(0, 2);
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    "@id": `${siteUrl}/blog/${article.slug}/#webpage`,
+    url: `${siteUrl}/blog/${article.slug}`,
+    name: article.title,
+    description: article.excerpt,
+    publisher: {
+      "@id": `${siteUrl}/#organization`,
+    },
+    author: {
+      "@type": "Person",
+      name: article.author,
+      jobTitle: article.authorRole,
+    },
+    about: {
+      "@type": "MedicalCondition",
+      name: "Infertility & Reproductive Health",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: siteUrl,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: `${siteUrl}/blog`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: `${siteUrl}/blog/${article.slug}`,
+      },
+    ],
+  };
+
   return (
     <div className="flex flex-col min-h-screen pt-24 bg-cream-bg">
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
+
       {/* 1. Header & Breadcrumb */}
       <article className="py-12 md:py-16 px-6">
         <div className="container mx-auto max-w-4xl">
@@ -135,7 +213,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
                   <p className="text-xs text-white/80">{article.content.summary}</p>
                 </div>
                 <Link
-                  href={`https://wa.me/917994892509?text=Hi%20Niora%20Clinic,%20I'm%20reading%20the%20article%20'${encodeURIComponent(
+                  href={`https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'm%20reading%20the%20article%20'${encodeURIComponent(
                     article.title
                   )}'%20and%20have%20a%20question.`}
                   target="_blank"

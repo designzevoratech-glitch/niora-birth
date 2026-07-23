@@ -143,7 +143,7 @@ export default function ConsultationsPage() {
                 className="flex flex-wrap gap-4"
               >
                 <Link
-                  href="https://wa.me/917994892509?text=Hi%20Niora%20Clinic,%20I'd%20like%20to%20book%20a%201-on-1%20fertility%20consultation."
+                  href="https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'd%20like%20to%20book%20a%201-on-1%20fertility%20consultation."
                   target="_blank"
                   className="px-8 py-4 rounded-full bg-gradient-to-r from-mauve-rose to-plum-deep text-white font-semibold text-sm shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all flex items-center gap-3"
                 >
@@ -162,7 +162,7 @@ export default function ConsultationsPage() {
               >
                 <Image
                   src="/service-consultation.png"
-                  alt="Doctor Consultation at Niora Birth Clinic"
+                  alt="Doctor Consultation at Niora Birth"
                   fill
                   className="object-cover"
                   priority

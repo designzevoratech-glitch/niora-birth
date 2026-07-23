@@ -204,7 +204,7 @@ export default function Hero() {
         >
           <Image
             src="/hero-bg-v2.png"
-            alt="Compassionate fertility care at Niora Birth Clinic"
+            alt="Compassionate fertility care at Niora Birth"
             fill
             className="object-cover object-center"
             priority
@@ -386,7 +386,7 @@ export default function Hero() {
           <div className="relative w-full max-w-[490px] h-[620px] rounded-[2.75rem] overflow-hidden shadow-[0_24px_80px_rgba(61,31,61,0.22)]">
             <Image
               src="/hero-bg-v2.png"
-              alt="Compassionate fertility care at Niora Birth Clinic"
+              alt="Compassionate fertility care at Niora Birth"
               fill
               className="object-cover object-center"
               priority
@@ -508,17 +508,17 @@ export default function Hero() {
                 <Link
                   href={
                     selectedOption !== null
-                      ? `https://wa.me/917994892509?text=Hi%20Niora%20Birth%20Clinic,%20I'm%20interested%20in%20a%20consultation%20regarding:%20${encodeURIComponent(
+                      ? `https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'm%20interested%20in%20a%20consultation%20regarding:%20${encodeURIComponent(
                           situationOptions[selectedOption].title
                         )}`
-                      : "https://wa.me/917994892509?text=Hi%20Niora%20Birth%20Clinic,%20I'd%20like%20to%20book%20a%20free%20fertility%20consultation."
+                      : "https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'd%20like%20to%20book%20a%20fertility%20consultation."
                   }
                   target="_blank"
                   className="flex-1"
                 >
                   <button className="w-full h-[50px] rounded-full bg-gradient-to-r from-mauve-rose to-plum-deep text-white font-semibold text-[14.5px] flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all">
                     <MessageCircle className="w-4 h-4" />
-                    Book Free Call on WhatsApp
+                    Book a Call on WhatsApp
                   </button>
                 </Link>
                 <a href="tel:+917994892509" className="sm:flex-none">
