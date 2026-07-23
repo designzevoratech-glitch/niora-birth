@@ -158,7 +158,7 @@ export default function ServicesOverview() {
                       <div className="text-[12px] font-bold uppercase tracking-wider text-blush-pink mb-1">
                         {service.plainBadge}
                       </div>
-                      <h3 className="font-display text-[26px] font-bold mb-3 leading-tight">
+                      <h3 className="font-display text-[26px] font-bold mb-3 leading-tight text-white">
                         {service.title}
                       </h3>
                       <p className="text-[14px] text-white/85 leading-relaxed mb-5 max-w-[310px]">

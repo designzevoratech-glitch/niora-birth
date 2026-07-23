@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import Link from "next/link";
@@ -77,6 +77,21 @@ export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedOption, setSelectedOption] = useState<number | null>(null);
+  const [mounted, setMounted] = useState(false);
+  const [particles, setParticles] = useState<any[]>([]);
+
+  useEffect(() => {
+    setMounted(true);
+    setParticles(
+      [...Array(10)].map(() => ({
+        size: Math.random() * 3 + 1.5,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        duration: Math.random() * 8 + 7,
+        delay: Math.random() * 5,
+      }))
+    );
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -99,23 +114,23 @@ export default function Hero() {
       <div className="absolute top-[-10%] left-[-10%] w-[70vw] h-[70vw] max-w-[700px] max-h-[700px] bg-blush-pink/25 blur-[130px] rounded-full pointer-events-none" />
       <div className="absolute bottom-[-5%] right-[-5%] w-[50vw] h-[50vw] max-w-[600px] max-h-[600px] bg-mauve-rose/12 blur-[120px] rounded-full pointer-events-none" />
 
-      {/* Floating particles (right half only) */}
+      {/* Floating particles (right half only) - Client Only */}
       <div className="absolute right-0 top-0 w-1/2 h-full pointer-events-none overflow-hidden hidden md:block">
-        {[...Array(10)].map((_, i) => (
+        {mounted && particles.map((p, i) => (
           <motion.div
             key={i}
             className="absolute rounded-full bg-blush-pink/50"
             style={{
-              width: Math.random() * 3 + 1.5 + "px",
-              height: Math.random() * 3 + 1.5 + "px",
-              top: Math.random() * 100 + "%",
-              left: Math.random() * 100 + "%",
+              width: p.size + "px",
+              height: p.size + "px",
+              top: p.top + "%",
+              left: p.left + "%",
             }}
             animate={{ y: [0, -35, 0], opacity: [0, 0.7, 0] }}
             transition={{
-              duration: Math.random() * 8 + 7,
+              duration: p.duration,
               repeat: Infinity,
-              delay: Math.random() * 5,
+              delay: p.delay,
               ease: "easeInOut",
             }}
           />
