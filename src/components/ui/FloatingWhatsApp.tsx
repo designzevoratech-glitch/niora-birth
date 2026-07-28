@@ -4,13 +4,21 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { X } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 export default function FloatingWhatsApp() {
   const [showCallout, setShowCallout] = useState(true);
 
+  const handleWhatsAppClick = () => {
+    trackEvent("whatsapp_click", {
+      category: "Floating Widget",
+      label: "+91 7994892509",
+    });
+  };
+
   return (
-    <div className="fixed bottom-5 right-5 sm:bottom-6 sm:right-6 z-[100] flex flex-col items-end gap-2.5 pointer-events-auto">
-      {/* Dismissible Glass Callout (Desktop / Tablet only so it never blocks mobile CTAs) */}
+    <div className="fixed bottom-20 right-5 lg:bottom-6 lg:right-6 z-[100] flex flex-col items-end gap-2.5 pointer-events-auto">
+      {/* Dismissible Glass Callout */}
       <AnimatePresence>
         {showCallout && (
           <motion.div
@@ -46,6 +54,7 @@ export default function FloatingWhatsApp() {
       <Link
         href="https://wa.me/917994892509?text=Hi%20Niora%20Birth,%20I'd%20like%20to%20know%20more%20about%20fertility%20consultation%20options."
         target="_blank"
+        onClick={handleWhatsAppClick}
         aria-label="Chat with Niora Birth Clinic on WhatsApp"
       >
         <motion.div
@@ -73,4 +82,3 @@ export default function FloatingWhatsApp() {
     </div>
   );
 }
-

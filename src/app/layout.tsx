@@ -6,6 +6,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import JsonLd from "@/components/seo/JsonLd";
+import { LeadModalProvider } from "@/components/providers/LeadModalProvider";
+import MobileActionBar from "@/components/lead/MobileActionBar";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -127,7 +129,7 @@ const organizationSchema = {
   name: "Niora Birth",
   alternateName: "Niora Birth Fertility Guidance Platform",
   url: siteUrl,
-  logo: `${siteUrl}/logo.png`,
+  logo: `${siteUrl}/updated_logo_cropped.png`,
   image: `${siteUrl}/hero-bg-v2.png`,
   description:
     "Niora Birth is a dedicated fertility consultation, patient guidance, and care coordination platform based in Kerala, connecting couples with vetted fertility specialists and partner hospitals.",
@@ -179,7 +181,7 @@ const localBusinessSchema = {
   "@type": "HealthAndBeautyBusiness",
   "@id": `${siteUrl}/#localbusiness`,
   name: "Niora Birth",
-  image: `${siteUrl}/logo.png`,
+  image: `${siteUrl}/updated_logo_cropped.png`,
   url: siteUrl,
   telephone: "+91-9745477622",
   priceRange: "₹₹",
@@ -222,10 +224,13 @@ export default function RootLayout({
       </head>
       <body className="min-h-full flex flex-col selection:bg-blush-pink selection:text-plum-deep">
         <SmoothScroll>
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-          <FloatingWhatsApp />
+          <LeadModalProvider>
+            <Navbar />
+            <main className="flex-1 pb-16 lg:pb-0">{children}</main>
+            <Footer />
+            <FloatingWhatsApp />
+            <MobileActionBar />
+          </LeadModalProvider>
         </SmoothScroll>
       </body>
     </html>

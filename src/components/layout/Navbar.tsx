@@ -1,10 +1,12 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from "framer-motion";
 import { Menu, X, Phone } from "lucide-react";
+import { useLeadModal } from "@/components/providers/LeadModalProvider";
+import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -18,10 +20,18 @@ export default function Navbar() {
   const { scrollY } = useScroll();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { openBookModal } = useLeadModal();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setScrolled(latest > 60);
   });
+
+  const handleCallClick = (location: string) => {
+    trackEvent("call_button_click", {
+      category: `Navbar ${location}`,
+      label: "+91 7994892509",
+    });
+  };
 
   return (
     <motion.header
@@ -72,16 +82,21 @@ export default function Navbar() {
 
         {/* Desktop CTA */}
         <div className="hidden lg:flex items-center gap-3">
-          <a href="tel:+917994892509" className="flex items-center gap-2 text-sm font-medium text-plum-deep/70 hover:text-mauve-rose transition-colors">
+          <a
+            href="tel:+917994892509"
+            onClick={() => handleCallClick("Desktop")}
+            className="flex items-center gap-2 text-sm font-medium text-plum-deep/70 hover:text-mauve-rose transition-colors"
+          >
             <Phone className="w-3.5 h-3.5" />
             <span>+91 79948 92509</span>
           </a>
-          <Link href="/contact">
-            <button className="h-[46px] px-[26px] rounded-full bg-gradient-to-r from-mauve-rose to-plum-deep text-white text-[13.5px] font-semibold shadow-[0_4px_15px_rgba(193,122,138,0.3)] hover:shadow-[0_6px_25px_rgba(193,122,138,0.5)] hover:-translate-y-[2px] transition-all duration-300 relative overflow-hidden group tracking-[0.02em]">
-              <div className="absolute inset-0 bg-white/15 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-              <span className="relative z-10">Book Consultation</span>
-            </button>
-          </Link>
+          <button
+            onClick={() => openBookModal()}
+            className="h-[46px] px-[26px] rounded-full bg-gradient-to-r from-mauve-rose to-plum-deep text-white text-[13.5px] font-semibold shadow-[0_4px_15px_rgba(193,122,138,0.3)] hover:shadow-[0_6px_25px_rgba(193,122,138,0.5)] hover:-translate-y-[2px] transition-all duration-300 relative overflow-hidden group tracking-[0.02em]"
+          >
+            <div className="absolute inset-0 bg-white/15 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+            <span className="relative z-10">Book Consultation</span>
+          </button>
         </div>
 
         {/* Mobile Toggle */}
@@ -145,14 +160,25 @@ export default function Navbar() {
               </nav>
 
               <div className="flex flex-col gap-3">
-                <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
-                  <div className="w-full text-center bg-gradient-to-r from-mauve-rose to-plum-deep text-white py-4 rounded-2xl font-semibold text-[15px] shadow-[0_4px_20px_rgba(193,122,138,0.3)] hover:shadow-lg transition-shadow">
-                    Book Consultation
-                  </div>
-                </Link>
-                <a href="tel:+917994892509" className="w-full text-center border-2 border-plum-deep/15 text-plum-deep py-3.5 rounded-2xl font-medium text-[15px] flex items-center justify-center gap-2 hover:bg-cream-bg transition-colors">
+                <button
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    openBookModal();
+                  }}
+                  className="w-full text-center bg-gradient-to-r from-mauve-rose to-plum-deep text-white py-4 rounded-2xl font-semibold text-[15px] shadow-[0_4px_20px_rgba(193,122,138,0.3)] hover:shadow-lg transition-shadow"
+                >
+                  Book Consultation
+                </button>
+                <a
+                  href="tel:+917994892509"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    handleCallClick("Mobile Menu");
+                  }}
+                  className="w-full text-center border-2 border-plum-deep/15 text-plum-deep py-3.5 rounded-2xl font-medium text-[15px] flex items-center justify-center gap-2 hover:bg-cream-bg transition-colors"
+                >
                   <Phone className="w-4 h-4" />
-                  Call Us
+                  Call Us (+91 79948 92509)
                 </a>
               </div>
             </motion.div>
