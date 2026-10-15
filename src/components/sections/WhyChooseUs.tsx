@@ -124,7 +124,7 @@ function FeatureCard({ feature, index }: { feature: typeof features[0]; index: n
 // ─── Main Section ─────────────────────────────────────────────────────────────
 const stats = [
   { end: 500, suffix: "+", label: "Families Guided", description: "Families who found their path to parenthood with us" },
-  { end: 15, suffix: "+", label: "Years of Excellence", description: "Dedicated years of trusted fertility care in Kerala" },
+  { end: 17, suffix: "+", label: "Years of Excellence", description: "Dedicated years of trusted fertility care in Kerala" },
   { end: 98, suffix: "%", label: "Satisfaction Rate", description: "Patients who rate their experience as excellent" },
   { end: 3, suffix: "", label: "States Served", description: "Kerala, Tamil Nadu & Bangalore — reaching families everywhere" },
 ];
