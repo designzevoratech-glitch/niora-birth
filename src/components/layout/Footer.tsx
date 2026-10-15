@@ -133,8 +133,8 @@ export default function Footer() {
                 <a href="tel:+917994892509" className="text-white/55 hover:text-blush-pink transition-colors">
                   +91 79948 92509 (WhatsApp)
                 </a>
-                <a href="tel:+919745477622" className="text-white/40 hover:text-blush-pink transition-colors">
-                  +91 97454 77622 (Office)
+                <a href="tel:+918590958853" className="text-white/40 hover:text-blush-pink transition-colors">
+                  +91 8590958853(Office)
                 </a>
               </div>
             </div>
