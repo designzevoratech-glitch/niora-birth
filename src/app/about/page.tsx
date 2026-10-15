@@ -119,7 +119,7 @@ export default function AboutPage() {
                 className="grid grid-cols-3 gap-4 mb-8"
               >
                 <div className="bg-cream-bg p-4 rounded-2xl border border-mauve-rose/15">
-                  <p className="font-serif text-2xl sm:text-3xl font-bold text-plum-deep">15+</p>
+                  <p className="font-serif text-2xl sm:text-3xl font-bold text-plum-deep">17+</p>
                   <p className="text-xs text-charcoal-text/70 font-medium">Years Guidance</p>
                 </div>
                 <div className="bg-cream-bg p-4 rounded-2xl border border-mauve-rose/15">
@@ -204,7 +204,7 @@ export default function AboutPage() {
               Our Story
             </span>
             <h2 className="font-serif text-3xl sm:text-4xl text-plum-deep font-bold mb-4">
-              15+ Years of Guidance Milestones
+              17+ Years of Guidance Milestones
             </h2>
           </div>
 

@@ -176,7 +176,7 @@ export default function Scene2Understanding() {
                 <Heart className="w-3.5 h-3.5" fill="currentColor" />
               </div>
               <div>
-                <div className="font-display text-[15px] sm:text-[16px] font-bold text-plum-deep leading-none">15+</div>
+                <div className="font-display text-[15px] sm:text-[16px] font-bold text-plum-deep leading-none">17+</div>
                 <div className="text-[10px] sm:text-[10.5px] text-charcoal-text/75 font-semibold">Years of Care</div>
               </div>
             </div>

@@ -34,7 +34,7 @@ const floatingCards = [
   },
   {
     icon: Star,
-    value: "15+",
+    value: "17+",
     label: "Years of Care",
     color: "from-blush-pink to-mauve-rose",
     position: "-right-2 lg:-right-6 top-[42%]",

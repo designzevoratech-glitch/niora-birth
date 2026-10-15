@@ -6,7 +6,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://niorabirth.com";
 export const metadata: Metadata = {
   title: "About Us | Trusted Fertility Guidance & Care Coordinator Kerala",
   description:
-    "Learn about Niora Birth's 15+ years of compassionate patient guidance and care coordination in Kerala. We connect couples with ethical fertility specialists and partner hospitals.",
+    "Learn about Niora Birth's 17+ years of compassionate patient guidance and care coordination in Kerala. We connect couples with ethical fertility specialists and partner hospitals.",
   alternates: {
     canonical: `${siteUrl}/about`,
   },

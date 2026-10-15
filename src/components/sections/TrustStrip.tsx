@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { CalendarHeart, ShieldCheck, MapPin, HeartHandshake, Star } from "lucide-react";
 
 const badges = [
-  { icon: CalendarHeart, title: "Since 2008", text: "Over 15 years of trusted fertility care" },
+  { icon: CalendarHeart, title: "Since 2008", text: "Over 17 years of trusted fertility care" },
   { icon: MapPin, title: "3 States Reached", text: "Kerala · Tamil Nadu · Bangalore" },
   { icon: ShieldCheck, title: "Fully Confidential", text: "100% privacy guaranteed, always" },
   { icon: HeartHandshake, title: "Personalized Guidance", text: "Tailored to every unique journey" },
@@ -64,7 +64,7 @@ export default function TrustStrip() {
             transition={{ delay: 0.2 }}
             className="mt-4 text-[16px] text-white/80 max-w-[500px] mx-auto leading-relaxed font-normal"
           >
-            Every commitment we make is backed by 15+ years of care, clinical integrity, and thousands of moments of genuine human connection.
+            Every commitment we make is backed by 17+ years of care, clinical integrity, and thousands of moments of genuine human connection.
           </motion.p>
         </div>
       </div>
@@ -111,7 +111,7 @@ export default function TrustStrip() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
             { value: "500+", label: "Families Guided" },
-            { value: "15+", label: "Years Experience" },
+            { value: "17+", label: "Years Experience" },
             { value: "3", label: "States Reached" },
             { value: "100%", label: "Confidentiality" },
           ].map((stat, i) => (
